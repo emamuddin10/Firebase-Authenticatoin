@@ -6,9 +6,12 @@ import { auth } from '../firebase.init';
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
+    // user created
     const createUser = (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
+
+    // user login
     const signInUser = (email,password)=>{
         return signInWithEmailAndPassword(auth,email,password)
     }
